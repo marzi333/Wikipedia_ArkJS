@@ -1,0 +1,48 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "D:\\Users\\m50037686\\.ohos\\config\\openharmony\\auto_ohos_default_Wikipedia_ArkJS_com.example.wikipedia_arkjs.cer",
+          "storePassword": "00000019EE2BA88EF7A2D38408C8129D7AF09B989FCD142BF2EBD6F9350769F6D9EE263516FE85AB29",
+          "keyAlias": "debugKey",
+          "keyPassword": "00000019F015DF0F1134B1131E7E331DDA090F068B51C9C7DCA3EEC18DEA981FEFFDDB7C0A2C75ED1D",
+          "profile": "D:\\Users\\m50037686\\.ohos\\config\\openharmony\\auto_ohos_default_Wikipedia_ArkJS_com.example.wikipedia_arkjs.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "D:\\Users\\m50037686\\.ohos\\config\\openharmony\\auto_ohos_default_Wikipedia_ArkJS_com.example.wikipedia_arkjs.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 8,
+    "compatibleSdkVersion": 8,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

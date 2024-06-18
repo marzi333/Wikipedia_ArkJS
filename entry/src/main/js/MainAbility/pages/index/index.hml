@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="header">
+        <image class="backImage" src="../../common/wiki_logo.png"/>
+        <input class="input" type="text" placeholder="Search Wikipedia" @change="onSearchInputChange"></input>
+        <button class="search-button" onclick ="goToSearchResults">Search</button>
+
+    </div>
+    <div class="content">
+
+    </div>
+    <div class="footer">
+        <button class="footer-button text1" type="text">Tips</button>
+        <button class="footer-button text2" type="text">Settings</button>
+    </div>
+</div>
