@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="header">
+        <input class="search-phrase" type="text" disabled="true" value="{{ searchPhrase }}"></input>
+
+    </div>
+    <div class="content">
+        <textarea class="search-results">Search Results</textarea>
+        <list class="search-list">
+                <list-item class="list-item" for="{{ item in array }}">
+                    <div class="item">
+                        <text class="item-title">{{ item.title }}</text>
+                        <text class="item-description">{{ item.description }}</text>
+                    </div>
+            </list-item>
+        </list>
+    </div>
+    <div class="footer">
+        <button class="footer-button text1" type="text">Tips</button>
+        <button class="footer-button text2" type="text">Settings</button>
+    </div>
+</div>
