@@ -1,7 +1,7 @@
 <div class="container">
     <div class="header">
-        <text class="title">Wik peoples</text>
-        <text class="subtitle">Indigenous peoples of Cape York Peninsula, Australia.</text>
+        <text class="title">{{ title }}</text>
+        <text class="description">{{ description }}</text>
 
         <div class="button" onclick="onClick">
             <text class="text">Contents</text>
@@ -15,12 +15,10 @@
 
     </div>
     <div class="main">
-        <text>
-            The Wik people are Indigenous Australians who primarily inhabit the Cape York Peninsula in Queensland, Australia. They are known for their rich cultural heritage and strong connection to their traditional lands. The Wik peoples consist of several distinct groups, each with their own languages and customs. Historically, they have maintained a close relationship with their environment, relying on hunting, fishing, and gathering for sustenance. Today, the Wik people continue to assert their rights and preserve their cultural identity amidst ongoing challenges and efforts for recognition and reconciliation.
-        </text>
+        <text>{{ content }}</text>
     </div>
     <div class="footer">
-        <button class="text text1" type="text">Close</button>
+        <button class="text text1" type="text" onclick="closePage">Close</button>
         <button class="text text3" type="text">SELECT</button>
         <button class="text text2" type="text">Options</button>
     </div>

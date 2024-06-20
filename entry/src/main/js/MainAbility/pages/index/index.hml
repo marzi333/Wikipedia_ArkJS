@@ -1,7 +1,7 @@
 <div class="container">
     <div class="header">
         <image class="backImage" src="../../common/wiki_logo.png"/>
-        <input class="input" type="text" placeholder="Search Wikipedia" @change="onSearchInputChange"></input>
+        <input class="input" type="text" placeholder="Search Wikipedia" onchange="onSearchInputChange"></input>
         <button class="search-button" onclick ="goToSearchResults">Search</button>
 
     </div>

@@ -1,16 +1,15 @@
 <div class="container">
     <div class="header">
-        <input class="search-phrase" type="text" disabled="true" value="{{ searchPhrase }}"></input>
-
+        <input class="search-phrase" type="text" value="{{ searchPhrase }}"></input>
     </div>
     <div class="content">
-        <textarea class="search-results">Search Results</textarea>
+       <text class="search-results">Search Results</text>
         <list class="search-list">
-                <list-item class="list-item" for="{{ item in array }}">
-                    <div class="item">
-                        <text class="item-title">{{ item.title }}</text>
-                        <text class="item-description">{{ item.description }}</text>
-                    </div>
+            <list-item class="list-item" for="{{ item in array }}" onclick="goToArticle(item.title)">
+                <div class="item">
+                    <text class="item-title">{{ item.title }}</text>
+                    <text class="item-description">{{$idx}}.{{ item.description }}</text>
+                </div>
             </list-item>
         </list>
     </div>

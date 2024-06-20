@@ -1,8 +1,11 @@
 import router from '@ohos.router'
+import document from '@ohos.document';
+
 export default {
     data: {
         searchPhrase:"",
     },
+
     onInit() {
         this.searchPhrase = "initial";
     },
@@ -11,6 +14,7 @@ export default {
     {
         this.searchPhrase = e.value;
     },
+
 
     goToSearchResults()
     {

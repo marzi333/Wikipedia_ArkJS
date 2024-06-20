@@ -1,0 +1,43 @@
+<!-- xxx.hml -->
+<!-- Just ignore test dir, its for testing the rendering -->
+<div class="array-container" style="flex-direction: column;margin: 200px;">
+<!-- div列表渲染 -->
+<!-- 默认$item代表数组中的元素, $idx代表数组中的元素索引 -->
+    <div for="{{array}}" tid="id" onclick="changeText">
+        <text>{{$idx}}.{{$item.name}}</text>
+    </div>
+
+<!-- 自定义元素变量名称 -->
+    <div for="{{value in array}}" tid="id" onclick="changeText">
+        <text>{{$idx}}.{{value.name}}</text>
+    </div>
+
+<!-- 自定义元素变量、索引名称 -->
+    <div for="{{(index, value) in array}}" tid="id" onclick="changeText">
+        <text>{{index}}.{{value.name}}</text>
+    </div>
+
+<!-- test 4-->
+    <list class="search-list">
+        <list-item class="list-item" for="{{ value in array }}" >
+            <div class="item">
+                <div ><text>Hey {{$idx}}.{{ value.name }}</text></div>
+                <div><text>Good {{$idx}}.{{ value.age }}</text></div>
+            </div>
+        </list-item>
+    </list>
+
+<!-- test 5-->
+    <div for="{{value in array}}" tid="id" onclick="changeText">
+        <text>{{$idx}}.{{value.name}}</text>
+    </div>
+<!-- test 6-->
+    <list class="search-list">
+        <list-item class="list-item" for="{{ value in array }}">
+            <div class="item">
+                <div class="item-title"><text>Hey {{$idx}}.{{ value.name }}</text></div>
+                <div class="item-description"><text>Good {{$idx}}.{{ value.age }}</text></div>
+            </div>
+        </list-item>
+    </list>
+</div>

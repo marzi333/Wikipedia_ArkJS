@@ -10,13 +10,14 @@
 }
 .header {
     background-color: #3366cc;
-    height: 20%;
+    height: 15%;
     flex-direction: column;
     justify-content: flex-start;
     padding: 20fp;
     align-items: center;
     color: white;
     text-align: center;
+
 }
 
 .search-phrase {
