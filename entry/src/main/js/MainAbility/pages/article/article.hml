@@ -4,17 +4,17 @@
         <text class="description">{{ description }}</text>
 
         <div class="button" onclick="onClick">
-            <text class="text">Contents</text>
-            <image class="image" src="../../common/list.png"></image>
+            <image class="btn-image" src="../../common/list.png"></image>
+            <text class="btn-text">Contents</text>
         </div>
         <menu id="apiMenu" onselected="onMenuSelected">
             <option value="Item 1">Background</option>
-            <option value="Item 2">The wik peoples</option>
-            <option value="Item 3">Basis of the wik claim</option>
+            <option value="Item 2">Section 1</option>
+            <option value="Item 3">Section 2</option>
         </menu>
 
     </div>
-    <div class="main">
+    <div class="content">
         <text>{{ content }}</text>
     </div>
     <div class="footer">

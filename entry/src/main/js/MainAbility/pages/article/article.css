@@ -2,26 +2,49 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     left: 0px;
     top: 0px;
     width: 100%;
     height: 100%;
+
+}
+
+.header {
+    height: 30%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 50px;
+}
+
+.content {
+    padding: 0;
+    margin: 0;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 50px;
+
 }
 
 .footer {
     background-color: gray;
+    height: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around; /* Space out buttons */
     align-items: center;
 }
 
 .text1{
     text-color: black;
+    margin-left: auto;
 }
 
 .text2{
     text-color: black;
+    margin-right: auto;
 
 }
 .text3{
@@ -29,15 +52,16 @@
 }
 
 .title {
-    font-size: 24px;
+    font-size: 50px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.description {
-    font-size: 18px;
+.subtitle {
+    font-size: 30px;
     font-style: italic;
-    color: #ccc; /* Example subtitle color */
+    color: gray; /* Example subtitle color */
+    margin-top: 20px;
 }
 
 .button {
@@ -48,7 +72,12 @@
     background-color: #DCDCDC;
     border-radius: 40px;
 }
-.image {
+
+.btn-image {
     width: 50px;
     height: 50px;
+}
+.btn-text
+{
+    margin-left: 20px;
 }
