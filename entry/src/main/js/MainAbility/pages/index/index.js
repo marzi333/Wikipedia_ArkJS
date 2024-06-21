@@ -13,12 +13,13 @@ export default {
     onSearchInputChange(e)
     {
         this.searchPhrase = e.value;
+        console.log(this.searchPhrase)
     },
 
 
     goToSearchResults()
     {
-        router.push({
+        router.pushUrl({
             url: 'pages/search_results/search_results',
             params: {
                 searchPhrase: this.searchPhrase

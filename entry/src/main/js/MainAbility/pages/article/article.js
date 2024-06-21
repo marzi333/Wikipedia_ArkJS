@@ -1,5 +1,6 @@
+import router from '@ohos.router';
+import http from '@ohos.net.http';
 import prompt from '@system.prompt';
-import router from '@ohos.router'
 
 export default {
     data: {
@@ -8,22 +9,46 @@ export default {
         content: "",
     },
 
-    async onInit() {
-        this.title = router.getParams()['title']
-        await this.fetchArticleContent(this.title);
+    onInit() {
+        this.title = router.getParams()['title'] || 'hangzhou';
+        this.fetchArticleContent(this.title);
     },
 
-    async fetchArticleContent(title) {
-        try {
-            const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${title}`);
-            const data = await response.json();
-            console.log('API Response:', data); // Log the full API response
-            this.title = data.title;
-            this.description = data.description;
-            this.content = data.extract;
-        } catch (error) {
-            console.error('Error fetching article content:', error);
-        }
+    fetchArticleContent(title) {
+        let httpRequest = http.createHttp();
+
+        httpRequest.on('headersReceive', (header) => {
+            console.info('Headers received: ' + JSON.stringify(header));
+        });
+
+        httpRequest.request(
+            `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`,
+            {
+                method: http.RequestMethod.GET,
+                header: {
+                    'Content-Type': 'application/json'
+                },
+                expectDataType: http.HttpDataType.OBJECT,
+                connectTimeout: 60000,
+                readTimeout: 60000,
+            },
+            (err, data) => {
+                if (!err) {
+                    let response = data.result;//Object
+                    this.title = response.title;
+                    this.description = response.description || response.extract;
+                    this.content = response.extract;
+                    // Print title, description, and content
+                    console.log('Title:', this.title);
+                    console.log('Description:', this.description);
+                    console.log('Content:', this.content);
+                } else {
+                    console.error('Error fetching article content:', err);
+                }
+                httpRequest.off('headersReceive');
+                httpRequest.destroy();
+            }
+        );
     },
 
     onMenuSelected(e) {
